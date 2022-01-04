@@ -1,0 +1,32 @@
+PODS:
+  - AppsFlyerFramework (6.4.4):
+    - AppsFlyerFramework/Main (= 6.4.4)
+  - AppsFlyerFramework/Main (6.4.4)
+  - Freshpaint (0.2.1)
+  - Freshpaint-AppsFlyer (0.1.0):
+    - Freshpaint (~> 0.2.1)
+    - Freshpaint-AppsFlyer/Main (= 0.1.0)
+  - Freshpaint-AppsFlyer/Main (0.1.0):
+    - AppsFlyerFramework (~> 6.4.4)
+    - Freshpaint (~> 0.2.1)
+
+DEPENDENCIES:
+  - Freshpaint-AppsFlyer (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - AppsFlyerFramework
+    - Freshpaint
+
+EXTERNAL SOURCES:
+  Freshpaint-AppsFlyer:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AppsFlyerFramework: 6ea252ecb04cf443550576922cddb95b35c958ed
+  Freshpaint: 97a8a42cca7d9c10922c55a4483679640414b9a8
+  Freshpaint-AppsFlyer: e76ed31c809bbb9832937d931c48782f559bdeb6
+
+PODFILE CHECKSUM: 11b8cf0a98d34bd236a3cf0d73aa0f19d76e5968
+
+COCOAPODS: 1.11.2
