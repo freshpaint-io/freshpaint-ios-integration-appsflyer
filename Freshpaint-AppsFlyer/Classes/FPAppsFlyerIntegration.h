@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import <FreshpaintSDK/FPAnalytics.h>
-#import <FreshpaintSDK/FPAnalyticsUtils.h>
+#import "FPAnalytics.h"
+#import "FPAnalyticsUtils.h"
 
 #import <AppsFlyerLib/AppsFlyerLib.h>
 

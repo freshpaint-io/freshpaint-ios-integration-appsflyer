@@ -7,11 +7,42 @@
 //
 
 #import "FPAppDelegate.h"
+#import <Freshpaint/FPAnalytics.h>
+#import <Freshpaint-AppsFlyer/FPAppsFlyerIntegrationFactory.h>
+
+NSString *const FPMENT_WRITE_KEY = @"5bd86532-4cc1-4b18-8392-880be8eb0e3d";
 
 @implementation FPAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // For ApsFlyer debug logs
+    [AppsFlyerLib shared].isDebug = YES;
+    FPAppsFlyerIntegrationFactory* factoryNoDelegate = [FPAppsFlyerIntegrationFactory instance];
+
+    [FPAnalytics debug:YES];
+    FPAnalyticsConfiguration *configuration = [FPAnalyticsConfiguration configurationWithWriteKey:FPMENT_WRITE_KEY];
+    configuration.trackApplicationLifecycleEvents = YES;
+    configuration.flushAt = 1;
+    [configuration use:factoryNoDelegate];
+    configuration.defaultSettings = @{
+        @"integrations": @{
+                @"AppsFlyer": @{
+                        @"appsFlyerDevKey": @"5pBF6VVurokueZBiqggaEa",
+                        @"trackAttributionData": @YES,
+                        @"appleAppID": @"id663793798"
+                },
+                @"Freshpaint.io": @{
+                        @"apiKey": FPMENT_WRITE_KEY
+                }
+        }
+    };
+
+    [FPAnalytics setupWithConfiguration:configuration];
+    [[FPAnalytics sharedAnalytics] track:@"App Launched"];
+
+    [[FPAnalytics sharedAnalytics] flush];
+    NSLog(@"application:didFinishLaunchingWithOptions: %@", launchOptions);
     // Override point for customization after application launch.
     return YES;
 }

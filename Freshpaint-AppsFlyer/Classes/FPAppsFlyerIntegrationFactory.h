@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <FreshpaintSDK/FPIntegrationFactory.h>
+#import "FPIntegrationFactory.h"
 #import "FPAppsFlyerIntegration.h"
 
 
