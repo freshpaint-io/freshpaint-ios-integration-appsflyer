@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Freshpaint-AppsFlyer/Classes/**/*'
 
-  s.dependency 'Freshpaint', '~> 0.2.1'
+  s.dependency 'Freshpaint', '~> 0.2.2'
 
   s.subspec 'Main' do |ss|
     ss.ios.dependency 'AppsFlyerFramework','~> 6.4.4'
