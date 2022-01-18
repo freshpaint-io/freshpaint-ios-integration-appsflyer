@@ -27,7 +27,7 @@
         if ([self logAttributionData]) {
             self.appsflyer.delegate = self;
         }
-        if (_segDLDelegate)
+        if (_fpDLDelegate)
             self.appsflyer.deepLinkDelegate = self;
 
         // For Freshpaint React Native. We should call our applicationDidBecomeActive in case we were initialized too late and missed the first launch
@@ -48,7 +48,7 @@
                    withAnalytics:(FPAnalytics *)analytics
                      andDelegate:(id<FPAppsFlyerLibDelegate>) delegate
 {
-    self.segDelegate = delegate;
+    self.fpDelegate = delegate;
     return [self initWithSettings:settings withAnalytics:analytics];
 }
 
@@ -57,8 +57,8 @@
                      andDelegate:(id<FPAppsFlyerLibDelegate>) delegate
                     andDeepLinkDelegate:(id<AppsFlyerDeepLinkDelegate>)DLDelegate
 {
-    self.segDelegate = delegate;
-    self.segDLDelegate = DLDelegate;
+    self.fpDelegate = delegate;
+    self.fpDLDelegate = DLDelegate;
     return [self initWithSettings:settings withAnalytics:analytics];
 }
 
@@ -77,7 +77,7 @@
         if ([self logAttributionData]) {
             self.appsflyer.delegate = self;
         }
-        if (_segDLDelegate) {
+        if (_fpDLDelegate) {
             self.appsflyer.deepLinkDelegate = self;
         }
 
@@ -203,8 +203,8 @@
 
     if(!installAttrSent){
   [userDefaults setBool:YES forKey:key];
-        if(_segDelegate && [_segDelegate respondsToSelector:@selector(onConversionDataSuccess:)]) {
-          [_segDelegate onConversionDataSuccess:conversionInfo];
+        if(_fpDelegate && [_fpDelegate respondsToSelector:@selector(onConversionDataSuccess:)]) {
+          [_fpDelegate onConversionDataSuccess:conversionInfo];
         }
         NSDictionary *campaign = @{
                 @"source": [FPAppsFlyerIntegration validateNil : conversionInfo[@"media_source"]],
@@ -234,32 +234,32 @@
 }
 
 - (void)onConversionDataFail:(nonnull NSError *)error {
-    if(_segDelegate && [_segDelegate respondsToSelector:@selector(onConversionDataFail:)]) {
-        [_segDelegate onConversionDataFail:error];
+    if(_fpDelegate && [_fpDelegate respondsToSelector:@selector(onConversionDataFail:)]) {
+        [_fpDelegate onConversionDataFail:error];
     }
     FPLog(@"[Appsflyer] onConversionDataRequestFailure:%@]", error);
 }
 
 - (void) onAppOpenAttribution:(NSDictionary*) attributionData
 {
-    if(_segDelegate && [_segDelegate respondsToSelector:@selector(onAppOpenAttribution:)]) {
-        [_segDelegate onAppOpenAttribution:attributionData];
+    if(_fpDelegate && [_fpDelegate respondsToSelector:@selector(onAppOpenAttribution:)]) {
+        [_fpDelegate onAppOpenAttribution:attributionData];
     }
     FPLog(@"[Appsflyer] onAppOpenAttribution data: %@", attributionData);
 }
 
 - (void) onAppOpenAttributionFailure:(NSError *)error
 {
-    if(_segDelegate && [_segDelegate respondsToSelector:@selector(onAppOpenAttributionFailure:)]) {
-        [_segDelegate onAppOpenAttributionFailure:error];
+    if(_fpDelegate && [_fpDelegate respondsToSelector:@selector(onAppOpenAttributionFailure:)]) {
+        [_fpDelegate onAppOpenAttributionFailure:error];
     }
     FPLog(@"[Appsflyer] onAppOpenAttribution failure data: %@", error);
 }
 
 -(void)didResolveDeepLink:(AppsFlyerDeepLinkResult *_Nonnull)result
 {
-    if (_segDLDelegate && [_segDLDelegate respondsToSelector:@selector(didResolveDeepLink:)]) {
-        [_segDLDelegate didResolveDeepLink:result];
+    if (_fpDLDelegate && [_fpDLDelegate respondsToSelector:@selector(didResolveDeepLink:)]) {
+        [_fpDLDelegate didResolveDeepLink:result];
     }
     FPLog(@"[Appsflyer] didResolveDeepLink result: %@", result);
 }

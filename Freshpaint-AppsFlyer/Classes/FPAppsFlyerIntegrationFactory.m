@@ -1,6 +1,6 @@
 //
 //  FPAppsFlyerIntegrationFactory.m
-//  AppsFlyerSegmentiOS
+//  AppsFlyerFreshpaintiOS
 //
 //  Created by Margot Guetta/Maxim Shoustin on 5/17/16.
 //  Copyright © 2016 AppsFlyer. All rights reserved.

@@ -28,8 +28,8 @@
 @property (nonatomic, strong) NSDictionary *settings;
 @property (nonatomic, strong) AppsFlyerLib *appsflyer;
 @property (nonatomic, strong) FPAnalytics *analytics;
-@property (weak, nonatomic) id<FPAppsFlyerLibDelegate> segDelegate;
-@property (weak, nonatomic) id<AppsFlyerDeepLinkDelegate> segDLDelegate;
+@property (weak, nonatomic) id<FPAppsFlyerLibDelegate> fpDelegate;
+@property (weak, nonatomic) id<AppsFlyerDeepLinkDelegate> fpDLDelegate;
 
 - (instancetype)initWithSettings:(NSDictionary *)settings
                    withAnalytics:(FPAnalytics *) analytics;
