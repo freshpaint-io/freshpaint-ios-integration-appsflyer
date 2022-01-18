@@ -2,13 +2,13 @@ PODS:
   - AppsFlyerFramework (6.4.4):
     - AppsFlyerFramework/Main (= 6.4.4)
   - AppsFlyerFramework/Main (6.4.4)
-  - Freshpaint (0.2.1)
+  - Freshpaint (0.2.2)
   - Freshpaint-AppsFlyer (0.1.0):
-    - Freshpaint (~> 0.2.1)
+    - Freshpaint (~> 0.2.2)
     - Freshpaint-AppsFlyer/Main (= 0.1.0)
   - Freshpaint-AppsFlyer/Main (0.1.0):
     - AppsFlyerFramework (~> 6.4.4)
-    - Freshpaint (~> 0.2.1)
+    - Freshpaint (~> 0.2.2)
 
 DEPENDENCIES:
   - Freshpaint-AppsFlyer (from `../`)
@@ -24,8 +24,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AppsFlyerFramework: 6ea252ecb04cf443550576922cddb95b35c958ed
-  Freshpaint: 97a8a42cca7d9c10922c55a4483679640414b9a8
-  Freshpaint-AppsFlyer: e76ed31c809bbb9832937d931c48782f559bdeb6
+  Freshpaint: eb47779a8433cc33143c27f2e3a7854938ea59cd
+  Freshpaint-AppsFlyer: 7d18d8fc51825cb7497d83efe9e1dc2df56b5b0b
 
 PODFILE CHECKSUM: 26f5cba98e7a88d9b25dbb070510b80ba1f1d806
 
