@@ -72,6 +72,14 @@ In `AppDelegate.m` ➜ `didFinishLaunchingWithOptions`:
 
     FPAnalyticsConfiguration *config = [FPAnalyticsConfiguration configurationWithWriteKey:@"WYsuyFINOKZuQyQAGn5JQoCgIdhOI146"];
     [config use:factoryNoDelegate];
+    configuration.defaultSettings = @{
+        @"integrations": @{
+                @"AppsFlyer": @{
+                        @"appsFlyerDevKey": @"<dev key>",
+                        @"trackAttributionData": @YES,
+                        @"appleAppID": @"<app ID>"
+                },
+  
 //    [config use:factoryWithDelegate];  // use this if you want to get conversion data in the app. Read more in the integration guide
     config.enableAdvertisingTracking = YES;       //OPTIONAL
     config.trackApplicationLifecycleEvents = YES; //OPTIONAL
