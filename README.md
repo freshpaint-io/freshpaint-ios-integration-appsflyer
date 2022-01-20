@@ -1,7 +1,9 @@
 # AppsFlyer integration for Freshpaint.
 
 ----------
+
 🛠 In order for us to provide optimal support, we would kindly ask you to submit any issues to support@freshpaint.io
+
 ----------
 
 ## Table of content
@@ -30,7 +32,7 @@ To install the Freshpaint-AppsFlyer integration:
 
 **Production** version:
 ```ruby
-pod 'Freshpaint-AppsFlyer', '0.1.0'
+pod 'Freshpaint-AppsFlyer', :git => 'https://github.com/freshpaint-io/freshpaint-ios-integration-appsflyer.git', :tag => '0.1.0'
 ```
 
 2. Run `pod install` in the project directory
